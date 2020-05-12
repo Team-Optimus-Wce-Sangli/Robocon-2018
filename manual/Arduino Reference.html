@@ -1,0 +1,377 @@
+
+<!-- saved from url=(0091)https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/ -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="./Arduino Reference_files/style.css" type="text/css">
+
+<link rel="icon" href="https://www.arduino.cc/reference/favicon.ico">
+
+<meta name="description" content="The Arduino programming language Reference, organized into Functions, Variable and Constant, and Structure keywords.">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+
+
+<title>Arduino Reference</title>
+<script async="" src="./Arduino Reference_files/analytics.js.download"></script><script src="./Arduino Reference_files/jquery-2.1.1.min.js.download"></script></head>
+
+<body>
+    
+<div id="header" class="temporary">
+</div>
+
+    <div id="reference">
+      <div class="container row">
+        <div class="first-column">
+          <div class="sidebar-nav">
+            <ul class="documentation-page-nav">
+    <li class="has-submenu">
+        <div class="bullet-icon">
+            <span class="icon"></span>
+            <span class="line"></span>
+        </div>
+        <a class="parent" href="https://www.arduino.cc/reference/en/#page-title">Language</a>
+        <ul class="reference-menu">
+            <li><a class="functions active" href="https://www.arduino.cc/reference/en/#functions">functions</a></li>
+            <li><a class="variables" href="https://www.arduino.cc/reference/en/#variables">variables</a></li>
+            <li><a class="structure" href="https://www.arduino.cc/reference/en/#structure">structure</a></li>
+        </ul>
+    </li>
+    <li>
+        <div class="bullet-icon">
+            <span class="icon"></span>
+            <span class="line"></span>
+        </div>
+        <a href="https://www.arduino.cc/en/Reference/Libraries">Libraries</a>
+    </li>
+    <li>
+        <div class="bullet-icon">
+            <span class="icon"></span>
+            <span class="line"></span>
+        </div>
+        <a href="https://www.arduino.cc/glossary/en">Glossary</a>
+    </li>
+</ul>
+
+<div class="licence">
+    <p>
+        The Arduino Reference text is licensed under a <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">Creative Commons Attribution-Share Alike 3.0 License</a>.
+    </p>
+    <p>
+       Find anything that can be improved? <a href="https://github.com/arduino/reference-en" target="_blank" rel="noopener">Suggest corrections and new documentation via GitHub.</a> 
+    </p>
+    <p>
+       Doubts on how to use Github? Learn everything you need to know in <a href="https://create.arduino.cc/projecthub/Arduino_Genuino/contribute-to-the-arduino-reference-af7c37" target="_blank" rel="noopener">this tutorial</a>. 
+    </p>
+</div>
+
+            <div>
+	<p class="last-github-update-timestamp">Last Update: Not Available</p>
+	<a id="edit-page-btn" href="https://github.com/arduino/reference-en/edit/master/Language/Functions/External%20Interrupts/attachInterrupt.adoc" class="primary-button" role="button" language="en" path="Language/Functions/External Interrupts/attachInterrupt.adoc">Edit This Page</a>	
+</div>
+          </div>
+        </div>
+
+        <div class="single-page">
+          
+
+
+
+
+
+
+<div class="breadcrumbs">
+    <a href="https://www.arduino.cc/reference/en/">Reference</a>
+    
+      
+      
+        
+          <span>
+            &gt; <a href="https://www.arduino.cc/reference/en/">Language</a>
+          </span>
+        
+        
+      
+    
+      
+      
+        
+          <span>
+            &gt; <a href="https://www.arduino.cc/reference/en/#functions"> Functions</a>
+          </span>
+        
+        
+      
+    
+      
+      
+        
+          <span>
+            &gt; External interrupts
+          </span>
+        
+        
+      
+    
+      
+      
+        
+          <span>
+            &gt; Attachinterrupt
+          </span>
+        
+        
+      
+    
+      
+      
+    
+</div>
+
+          <h1>attachInterrupt()</h1>
+          [External Interrupts]
+          <div id="overview" class="openblock">
+<div class="content">
+<h3 id="_description" class="float">Description</h3>
+<div class="paragraph">
+<p><strong>Digital Pins With Interrupts</strong></p>
+</div>
+<div class="paragraph">
+<p>The first parameter to attachInterrupt is an interrupt number. Normally you should use digitalPinToInterrupt(pin) to translate the actual digital pin to the specific interrupt number. For example, if you connect to pin 3, use digitalPinToInterrupt(3) as the first parameter to attachInterrupt.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Board</th>
+<th class="tableblock halign-left valign-top">Digital Pins Usable For Interrupts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uno, Nano, Mini, other 328-based</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2, 3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mega, Mega2560, MegaADK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2, 3, 18, 19, 20, 21</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Micro, Leonardo, other 32u4-based</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0, 1, 2, 3, 7</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zero</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all digital pins, except 4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MKR1000 Rev.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0, 1, 4, 5, 6, 7, 8, 9, A1, A2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Due</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all digital pins</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">101</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all digital pins (Only pins 2, 5, 7, 8, 10, 11, 12, 13 work with <strong>CHANGE</strong>)</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_notes_and_warnings" class="float">Notes and Warnings</h3>
+<div class="paragraph">
+<p><strong>Note</strong><br>
+Inside the attached function, <code>delay()</code> won’t work and the value returned by <code>millis()</code> will not increment. Serial data received while in the function may be lost. You should declare as volatile any variables that you modify within the attached function. See the section on ISRs below for more information.</p>
+</div>
+<h2 id="_using_interrupts" class="float">Using Interrupts</h2>
+<div class="paragraph">
+<p>Interrupts are useful for making things happen automatically in microcontroller programs, and can help solve timing problems. Good tasks for using an interrupt may include reading a rotary encoder, or monitoring user input.</p>
+</div>
+<div class="paragraph">
+<p>If you wanted to insure that a program always caught the pulses from a rotary encoder, so that it never misses a pulse, it would make it very tricky to write a program to do anything else, because the program would need to constantly poll the sensor lines for the encoder, in order to catch pulses when they occurred. Other sensors have a similar interface dynamic too, such as trying to read a sound sensor that is trying to catch a click, or an infrared slot sensor (photo-interrupter) trying to catch a coin drop. In all of these situations, using an interrupt can free the microcontroller to get some other work done while not missing the input.</p>
+</div>
+<h2 id="_about_interrupt_service_routines" class="float">About Interrupt Service Routines</h2>
+<div class="paragraph">
+<p>ISRs are special kinds of functions that have some unique limitations most other functions do not have. An ISR cannot have any parameters, and they shouldn’t return anything.</p>
+</div>
+<div class="paragraph">
+<p>Generally, an ISR should be as short and fast as possible. If your sketch uses multiple ISRs, only one can run at a time, other interrupts will be executed after the current one finishes in an order that depends on the priority they have. millis() relies on interrupts to count, so it will never increment inside an ISR. Since delay() requires interrupts to work, it will not work if called inside an ISR. micros() works initially, but will start behaving erratically after 1-2 ms. delayMicroseconds() does not use any counter, so it will work as normal.</p>
+</div>
+<div class="paragraph">
+<p>Typically global variables are used to pass data between an ISR and the main program. To make sure variables shared between an ISR and the main program are updated correctly, declare them as <code>volatile</code>.</p>
+</div>
+<div class="paragraph">
+<p>For more information on interrupts, see <a href="http://gammon.com.au/interrupts">Nick Gammon’s notes</a>.</p>
+</div>
+<h3 id="_syntax" class="float">Syntax</h3>
+<div class="paragraph">
+<p><code>attachInterrupt(digitalPinToInterrupt(pin), ISR, mode);</code>	(recommended)<br>
+<code>attachInterrupt(interrupt, ISR, mode);</code>	(not recommended)<br>
+<code>attachInterrupt(pin, ISR, mode);</code>	(not recommended Arduino Due, Zero, MKR1000, 101 only)</p>
+</div>
+<h3 id="_parameters" class="float">Parameters</h3>
+<div class="paragraph">
+<p><code>interrupt</code>: 	the number of the interrupt (<code>int</code>)<br>
+<code>pin</code>: 	      the pin number 	            <em>(Arduino Due, Zero, MKR1000 only)</em><br>
+<code>ISR</code>: 	      the ISR to call when the interrupt occurs; this function must take no parameters and return nothing. This function is sometimes referred to as an interrupt service routine.<br>
+<code>mode</code>: 	     defines when the interrupt should be triggered. Four constants are predefined as valid values:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>LOW</strong> to trigger the interrupt whenever the pin is low,<br></p>
+</li>
+<li>
+<p><strong>CHANGE</strong> to trigger the interrupt whenever the pin changes value<br></p>
+</li>
+<li>
+<p><strong>RISING</strong> to trigger when the pin goes from low to high,<br></p>
+</li>
+<li>
+<p><strong>FALLING</strong> for when the pin goes from high to low.<br>
+The Due, Zero and MKR1000 boards allows also:<br></p>
+</li>
+<li>
+<p><strong>HIGH</strong> to trigger the interrupt whenever the pin is high.</p>
+</li>
+</ul>
+</div>
+<h3 id="_returns" class="float">Returns</h3>
+<div class="paragraph">
+<p>Nothing</p>
+</div>
+</div>
+</div>
+<div id="howtouse" class="openblock">
+<div class="content">
+<h3 id="_example_code" class="float">Example Code</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-arduino hljs" data-lang="arduino"><span class="hljs-keyword">const</span> <span class="hljs-keyword">byte</span> ledPin = <span class="hljs-number">13</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">byte</span> interruptPin = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">volatile</span> <span class="hljs-keyword">byte</span> state = <span class="hljs-literal">LOW</span>;
+
+<span class="hljs-keyword">void</span> <span class="hljs-built_in">setup</span>() {
+  <span class="hljs-built_in">pinMode</span>(ledPin, <span class="hljs-literal">OUTPUT</span>);
+  <span class="hljs-built_in">pinMode</span>(interruptPin, <span class="hljs-literal">INPUT_PULLUP</span>);
+  <span class="hljs-built_in">attachInterrupt</span>(digitalPinToInterrupt(interruptPin), <span class="hljs-built_in">blink</span>, CHANGE);
+}
+
+<span class="hljs-keyword">void</span> <span class="hljs-built_in">loop</span>() {
+  <span class="hljs-built_in">digitalWrite</span>(ledPin, state);
+}
+
+<span class="hljs-keyword">void</span> <span class="hljs-built_in">blink</span>() {
+  state = !state;
+}</code></pre>
+</div>
+</div>
+<h3 id="_interrupt_numbers" class="float">Interrupt Numbers</h3>
+<div class="paragraph">
+<p>Normally you should use digitalPinToInterrupt(pin), rather than place an interrupt number directly into your sketch. The specific pins with interrupts, and their mapping to interrupt number varies on each type of board. Direct use of interrupt numbers may seem simple, but it can cause compatibility trouble when your sketch is run on a different board.</p>
+</div>
+<div class="paragraph">
+<p>However, older sketches often have direct interrupt numbers. Often number 0 (for digital pin 2) or number 1 (for digital pin 3) were used. The table below shows the available interrupt pins on various boards.</p>
+</div>
+<div class="paragraph">
+<p>Note that in the table below, the interrupt numbers refer to the number to be passed to attachInterrupt(). For historical reasons, this numbering does not always correspond directly to the interrupt numbering on the atmega chip (e.g. int.0 corresponds to INT4 on the Atmega2560 chip).</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Board</th>
+<th class="tableblock halign-left valign-top">int.0</th>
+<th class="tableblock halign-left valign-top">int.1</th>
+<th class="tableblock halign-left valign-top">int.2</th>
+<th class="tableblock halign-left valign-top">int.3</th>
+<th class="tableblock halign-left valign-top">int.4</th>
+<th class="tableblock halign-left valign-top">int.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uno, Ethernet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mega2560</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">21</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32u4 based (e.g Leonardo, Micro)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For Due, Zero, MKR1000 and 101 boards the <strong>interrupt number = pin number</strong>.</p>
+</div>
+</div>
+</div>
+
+
+        <div id="see_also" class="openblock"><div class="content"><h3 class="float">See also</h3><div class="ulist language"><ul><li>
+                    <p>
+                      <mark>LANGUAGE</mark>
+                      <a href="https://www.arduino.cc/reference/en/language/functions/external-interrupts/detachinterrupt/">
+                        
+                          detachInterrupt()
+                        
+                      </a>
+                    </p>
+                  </li></ul></div></div></div></div>
+
+        
+      </div>      
+    </div>
+    
+<div>
+  <div id="newsletter-modal"></div>
+  <div id="footer"></div>
+</div>
+ <script src="./Arduino Reference_files/loader.js.download" type="text/javascript"></script>
+<script>
+    var authOptions = {
+      authURI: "https://auth.arduino.cc/login",
+      redirectURI: window.location.href,
+      clientID: "reference",
+      scopes: ["profile:core", "profile:public"]
+    };
+    ArduinoHeaderAndFooter({auth: 'default', authOptions: authOptions});
+
+    
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22581631-3', 'auto');
+	ga('send', 'pageview');
+</script>
+<script src="./Arduino Reference_files/scripts.js.download"></script>
+
+</body></html>
